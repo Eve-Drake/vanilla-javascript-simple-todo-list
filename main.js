@@ -43,5 +43,18 @@ function deleteTodo(){
 }
 
 function editTodo(){
-    console.log('edit')
+    let editDiv  =document.createElement('div')
+
+    let editInput = document.createElement('input')
+    editDiv.appendChild(editInput)
+
+    let saveEdit = document.createElement('button')
+    saveEdit.innerHTML = 'Save'
+    editDiv.appendChild(saveEdit)
+
+    let cancelEdit = document.createElement('button')
+    cancelEdit.innerHTML = 'Cancel'
+    editDiv.appendChild(cancelEdit)
+
+    todoDisplay.appendChild(editDiv)
 }
