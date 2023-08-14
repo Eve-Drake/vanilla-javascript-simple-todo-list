@@ -37,10 +37,11 @@ function displayTask(){
 }
 
 
-function deleteTodo(id){
-    console.log(`Delete ${id}`)
+function deleteTodo(){
+    todoList = todoList.filter(todo => todo.id != this.parentElement.id)
+    displayTask()
 }
 
-function editTodo(id){
+function editTodo(){
     console.log('edit')
 }
