@@ -38,7 +38,7 @@ function displayTask(){
 
 
 function deleteTodo(id){
-    console.log('delete')
+    console.log(`Delete ${id}`)
 }
 
 function editTodo(id){
