@@ -37,10 +37,10 @@ function displayTask(){
 }
 
 
-function deleteTodo(){
+function deleteTodo(id){
     console.log('delete')
 }
 
-function editTodo(){
+function editTodo(id){
     console.log('edit')
 }
