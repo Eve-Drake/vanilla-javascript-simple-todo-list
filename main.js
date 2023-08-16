@@ -21,6 +21,7 @@ function displayTask(){
         let todoLi =document.createElement('li')
         todoLi.innerHTML = todoList[i].todo
         todoLi.id = todoList[i].id
+        todoLi.className = 'todo'
         
         let deleteButton = document.createElement('button')
         deleteButton.onclick = deleteTodo
