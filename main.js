@@ -2,10 +2,11 @@ let todoList = []
 var input = document.getElementById('input')
 var todoDisplay = document.getElementById('listDisplay')
 const editDisplay = document.getElementById('editInput')
+var editIdHold =''
 
 function addTask(){
     if(input.value === ''){
-        console.err('No Text');
+        console.error('No Text');
     }
     else{
         var newTodo = {todo: input.value, id: Math.floor(Math.random() * 100)}
@@ -45,20 +46,23 @@ function deleteTodo(){
 }
 
 function editTodo(){
-    let editDiv  =document.createElement('div')
+    editIdHold = this.parentElement.id
+
+    let editDiv = document.createElement('div')
 
     let editInput = document.createElement('input')
     editDiv.appendChild(editInput)
 
-    let saveEdit = document.createElement('button')
-    saveEdit.innerHTML = 'Save'
-    saveEdit.onclick = updateEdit
-    editDiv.appendChild(saveEdit)
-
     let cancelEdit = document.createElement('button')
     cancelEdit.innerHTML = 'Cancel'
     cancelEdit.onclick = cancelEditForm
-    editDiv.appendChild(cancelEdit)
+    editDiv.appendChild(cancelEdit)  
+    
+    let saveEdit = document.createElement('button')
+    saveEdit.innerHTML = 'Save'
+    editDiv.appendChild(saveEdit)
+
+    saveEdit.onclick = updateEdit
 
     editDisplay.appendChild(editDiv)
 }
@@ -68,6 +72,7 @@ function cancelEditForm(){
     editDisplay.innerHTML = ''
 }
 
+
 function updateEdit(){
-    
+    console.log(`Id: ${editIdHold} Text: ${editTodoValue}`)
 }
