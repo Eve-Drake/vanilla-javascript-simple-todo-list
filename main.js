@@ -1,6 +1,7 @@
 let todoList = []
 var input = document.getElementById('input')
 var todoDisplay = document.getElementById('listDisplay')
+const editDisplay = document.getElementById('editInput')
 
 function addTask(){
     if(input.value === ''){
@@ -16,7 +17,7 @@ function addTask(){
 }
 
 function displayTask(){
-    listDisplay.innerHTML = ''
+    todoDisplay.innerHTML = ''
     for(let i =0; i < todoList.length; i++){
         let todoLi =document.createElement('li')
         todoLi.innerHTML = todoList[i].todo
@@ -51,11 +52,22 @@ function editTodo(){
 
     let saveEdit = document.createElement('button')
     saveEdit.innerHTML = 'Save'
+    saveEdit.onclick = updateEdit
     editDiv.appendChild(saveEdit)
 
     let cancelEdit = document.createElement('button')
     cancelEdit.innerHTML = 'Cancel'
+    cancelEdit.onclick = cancelEditForm
     editDiv.appendChild(cancelEdit)
 
-    todoDisplay.appendChild(editDiv)
+    editDisplay.appendChild(editDiv)
+}
+
+
+function cancelEditForm(){
+    editDisplay.innerHTML = ''
+}
+
+function updateEdit(){
+    
 }
