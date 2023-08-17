@@ -80,14 +80,11 @@ function cancelEditForm(){
 
 
 function updateEdit(){
-    todoList.map((el) =>{
-        if(el.id == editIdHold){
-            return {todo: 'Hello', id: editIdHold}
-        }
-        else{
-            return el
+    todoList.forEach((task) =>{
+        if(task.id == editIdHold){
+            task.todo = this.parentElement.children[0].value;
         }
     })
-    displayTask()
-    console.log(todoList)
+    displayTask();
+    cancelEditForm();
 }
