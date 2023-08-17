@@ -2,7 +2,8 @@ let todoList = []
 var input = document.getElementById('input')
 var todoDisplay = document.getElementById('listDisplay')
 const editDisplay = document.getElementById('editInput')
-var editIdHold =''
+
+var editIdHold
 
 function addTask(){
     if(input.value === ''){
@@ -45,6 +46,11 @@ function deleteTodo(){
     displayTask()
 }
 
+function clearAll(){
+    todoList = []
+    displayTask()
+}
+
 function editTodo(){
     editIdHold = this.parentElement.id
 
@@ -74,5 +80,14 @@ function cancelEditForm(){
 
 
 function updateEdit(){
-    console.log(`Id: ${editIdHold} Text: ${editTodoValue}`)
+    todoList.map((el) =>{
+        if(el.id == editIdHold){
+            return {todo: 'Hello', id: editIdHold}
+        }
+        else{
+            return el
+        }
+    })
+    displayTask()
+    console.log(todoList)
 }
