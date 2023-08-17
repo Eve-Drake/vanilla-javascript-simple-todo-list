@@ -36,7 +36,7 @@ button:hover{
 
 #listDisplay{
     display: grid;
-    gap: 2px;
+    gap: 0.5rem;
     
 }
 
@@ -51,8 +51,8 @@ button:hover{
 }
 
 .todo:nth-child(even){
-    background: rgb(255,26,10);
-    background: linear-gradient(45deg, rgba(255,26,10,1) 48%, rgba(254,101,40,1) 69%);
+    background: rgb(246, 53, 40);
+    background: linear-gradient(45deg, rgb(210, 49, 37) 48%, rgba(254,101,40,1) 69%);
 }
 
 .todo:nth-child(odd){
