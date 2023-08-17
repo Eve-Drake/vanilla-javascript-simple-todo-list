@@ -9,8 +9,8 @@
 }
 
 main{
-    background: rgb(0,76,167);
-    background: linear-gradient(125deg, rgba(0,76,167,1) 0%, rgba(0,2,84,1) 100%);
+    background: rgb(0, 38, 84);
+    background: linear-gradient(125deg, rgb(0, 56, 124) 0%, rgb(0, 1, 63) 100%);
     min-height: 100vh;
 }
 
@@ -45,8 +45,17 @@ button:hover{
     border-radius: 10px;
     list-style: none;
     padding: 10px;
-    background: rgb(255,26,10);
-    background: linear-gradient(45deg, rgba(255,26,10,1) 48%, rgba(254,101,40,1) 69%);
+
     display: grid;
     grid-template-columns: 5fr 1fr 1fr;
+}
+
+.todo:nth-child(even){
+    background: rgb(255,26,10);
+    background: linear-gradient(45deg, rgba(255,26,10,1) 48%, rgba(254,101,40,1) 69%);
+}
+
+.todo:nth-child(odd){
+    background: rgb(10,142,255);
+    background: linear-gradient(45deg, rgba(10,142,255,1) 48%, rgba(40,254,241,1) 70%); 
 }
